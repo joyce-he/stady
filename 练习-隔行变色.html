@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>顺利毕业1</li>
+        <li>顺利毕业2</li>
+        <li>顺利毕业3</li>
+        <li>顺利毕业4</li>
+        <li>顺利毕业5</li>
+        <li>顺利毕业6</li>
+        <li>顺利毕业7</li>
+        <li>顺利毕业8</li>
+    </ul>
+    <script src="../../jquery-1.12.4.js"></script>
+    <script>
+        // $(function () {
+        //     $('li:odd').css('backgroundColor', 'green');
+        //     $('li:even').css('backgroundColor', 'red');
+        // })
+
+        //第二种方法
+        $(function () {
+            //遍历li 对象
+            var $li = $('li');
+            for (var i = 0; i < $li.length; i++) {
+                if (i % 2 == 0) {
+                    //$li[i]是dom对象
+                    $li[i].style.backgroundColor = 'red';
+                } else {
+                    // $li[i].style.backgroundColor = 'green';
+                    $($li[i]).css('backgroundColor', 'yellow');
+                    //$(dom对象)才能转
+                };
+            };
+        });
+
+    </script>
+</body>
+
+</html>

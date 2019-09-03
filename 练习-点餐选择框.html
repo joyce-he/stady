@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    table {
+        border-collapse: collapse;
+        border: 1px solid #c0c0c0;
+        width: 500px;
+        margin: 100px auto;
+        text-align: center;
+    }
+
+    th {
+        background-color: #09c;
+        font: bold 16px "微软雅黑";
+        color: #fff;
+        height: 24px;
+    }
+
+    td {
+        border: 1px solid #d0d0d0;
+        color: #404060;
+        padding: 10px;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>练习点餐选择框</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>
+                <input type="checkbox" name="" id="checkAll" />全选/全不选
+            </th>
+            <th>菜名</th>
+            <th>商家</th>
+            <th>价格</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" class="check" />
+            </td>
+            <td>红烧肉</td>
+            <td>隆江猪脚饭</td>
+            <td>￥200</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" class="check" />
+            </td>
+            <td>香酥排骨</td>
+            <td>隆江猪脚饭</td>
+            <td>￥998</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" class="check" />
+            </td>
+            <td>北京烤鸭</td>
+            <td>隆江猪脚饭</td>
+            <td>￥88</td>
+        </tr>
+    </table>
+    <script src="../../jquery-1.12.4.js"></script>
+    <script>
+        //入口函数
+        $(function () {
+            //1.点击全选框,下面的选择框也被选择
+            //2.点击下方的选择列表,开关思想检查上面选择框状态
+            $('#checkAll').click(function () {
+                //让下方选项框和自己 的checked属性一致
+                $('.check').prop('checked', $(this).prop('checked'));
+            });
+            //获取所有的下方选项框
+            //布尔值不能是字符串----------------------------------
+
+            $('.check').click(function () {
+
+                $('#checkAll').prop('checked', $('.check').length == $('check:checked').length);
+
+
+                // var allNum = $('.check:checked').length;
+                // var setNum = $('.check').length;
+                // if (allNum == setNum) {
+                //     $('#checkAll').prop('checked', true);
+                // } else {
+                //     $('#checkAll').prop('checked', false);
+                // };
+            });
+            $('#checkAll').click(function () {
+                $('.check').attr('')
+            })
+        });
+    </script>
+</body>
+
+</html>

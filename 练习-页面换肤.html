@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>练习-页面换肤</title>
+    <style>
+        .small {
+            width: 180px;
+        }
+
+        li {
+            float: left;
+            list-style: none;
+            margin-right: 20px;
+        }
+
+        ul {
+            width: 1000px;
+            margin: 0 auto;
+
+            height: 160px;
+
+        }
+
+        .father {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        .father #bigPic {
+            width: 1000px;
+        }
+
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="ul1">
+        <li><a href="images/01.jpg" title="美女A"><img src="images/01.jpg" alt="" class="small" /></a></li>
+        <li><a href="images/02.jpg" title="美女B"><img src="images/02.jpg" alt="" class="small" /></a></li>
+        <li><a href="images/03.jpg" title="美女C"><img src="images/03.jpg" alt="" class="small" /></a></li>
+        <li><a href="images/04.jpg" title="美女D"><img src="images/04.jpg" alt="" class="small" /></a></li>
+        <li><a href="images/05.jpg" title="美女E"><img src="images/05.jpg" alt="" class="small" /></a></li>
+    </ul>
+    <p>美女A</p>
+    <div class="father">
+        <img src="images/01.jpg" alt="" id="bigPic" />
+    </div>
+</body>
+<script src="../../jquery-1.12.4.js"></script>
+<script>
+    // $(function () {
+
+    //     $('#ul1>li>a').click(function () {
+    //         //当点击的时候 取出自己的大图设置给bigpic里面
+    //         //this不需要'' 因为不是选择器 是dom对象
+    //         $('bigPic').attr('src', $(this).attr('href'));
+    //         //取出自己的title里面的内容 给P标签 
+    //         $('p').text($(this).attr('title'));
+
+    //         //阻止a标签的默认跳转
+    //         return false;
+    //     });
+    // });
+
+    //第二遍
+    $(function () {
+        //给每个a标签添加事件
+        //title是点击a标签显示的文本 
+        $('#ul1>li>a').click(function () {
+            $('#bigPic').attr('src', $(this).attr('href'));
+            $('p').text($(this).attr('title'));
+
+            //阻止a标签的默认跳转
+            return false;
+        });
+    });
+</script>
+
+</html>
