@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+<p>git练习</p>
+
+    <div id="box">好好学习 天天向上</div>
+    <script src="../../jquery-1.12.4.js"></script>
+    <script>
+        //jq对象和dom对象的区别:  语法不互通
+        //jq只能用jq的语法 dom只能用dom的语法   
+        $(function () {
+            console.log(12233);
+        })
+        $().ready(function () {
+            console.log('我是jq入口函数的第二种方式');
+        });
+
+
+        //js原生入口函数,注册事件的本身是 对对象的属性赋值
+        window.onload = function () {
+            console.log('我是原生入口函数');
+        }
+
+        //获取jq对象 选择器是需要加'' 是字符串
+        $('#box').css('backgroundColor', 'red');
+        //dom对象转jq对象
+        $(box).css('backgroundColor', 'pink');
+
+        $(box)[0].style.backgroundColor = 'green';
+
+        
+
+
+
+    </script>
+</body>
+
+</html>

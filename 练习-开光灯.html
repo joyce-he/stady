@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>开关灯练习</title>
+</head>
+
+<body>
+    <button>关灯</button>
+    <script src="../../jquery-1.12.4.js"></script>
+    <script>
+        //假如按钮是关灯 改成开灯然后body设置背景颜色
+        $(function () {
+            $('button').click(function () {
+                if ($(this).text() == '关灯') {
+                    $(this).text('开灯');
+                    $(document.body).css('backgroundColor', 'black');
+                } else {
+                    $(this).text('关灯');
+                    $(document.body).css('backgroundColor', '');
+                }
+            });
+        });
+
+        //第二遍
+        //写在入口函数里面
+        //获取按钮 然后获取里面的内容
+        $(function () {
+            $('button').click(function () {
+                if ($('button').text() == '关灯') {
+                    $(this).text('开灯');
+                    $(document.body).css('backgroundColor', 'black');
+                } else {
+                    $(this).text('关灯');
+                    $(document.body).css('backgroundColor', '');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
